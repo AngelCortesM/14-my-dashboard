@@ -1,22 +1,18 @@
-import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-heavy-loaders-fast',
-  imports: [],
+  imports: [CommonModule],
   template: `
-    <div class="heavy-loaders-slow">
-      <h1>Heavy Loaders Slow</h1>
-      <p>heavy-loaders-slow works!</p>
-    </div>
+    <section [ngClass]="['w-full', cssClass]">
+      <ng-content></ng-content>
+    </section>
   `,
-  styles: [
-    `
-      .heavy-loaders-slow {
-        background: #f9f9f9;
-        padding: 20px;
-        text-align: center;
-      }
-    `,
-  ],
 })
-export class HeavyLoadersFastComponent {}
+export class HeavyLoadersFastComponent {
+  @Input({ required: true }) cssClass!: string;
+  constructor() {
+    console.log('HeavyLoaders Fast');
+  }
+}
