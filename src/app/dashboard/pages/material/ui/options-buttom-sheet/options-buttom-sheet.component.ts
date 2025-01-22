@@ -1,0 +1,13 @@
+import { Component } from '@angular/core';
+import { MatListModule } from '@angular/material/list';
+
+@Component({
+  selector: 'app-options-buttom-sheet',
+  imports: [MatListModule],
+  templateUrl: './options-buttom-sheet.component.html',
+})
+export class OptionsButtomSheetComponent {
+  openLink(event: MouseEvent) {
+    console.log('openLink', event);
+  }
+}

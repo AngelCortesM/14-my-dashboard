@@ -78,7 +78,9 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: '/dashboard',
+    redirectTo: (route) => {
+      return 'dashboard/material';
+    },
     pathMatch: 'full',
   },
 ];
